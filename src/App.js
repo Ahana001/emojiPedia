@@ -2,15 +2,21 @@ import "./styles.css";
 import { useState } from "react";
 
 export default function App() {
-  var [like, setLikeCounter] = useState(0);
-
-  function likeEventHandler() {
-    setLikeCounter(like + 1);
+  function inputEventHandler(e) {
+    console.log(e.target.value);
   }
   return (
     <div className="App">
-      <button onClick={likeEventHandler}>Like</button>
-      <h1>{like}</h1>
+      <h1>inside outttt</h1>
+      <input
+        onChange={(event) => inputEventHandler(event)}
+        style={{
+          fontSize: "1.5rem",
+          padding: "0.5rem",
+          cursor: "pointer",
+          width: "80%"
+        }}
+      />
     </div>
   );
 }
