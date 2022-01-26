@@ -12,11 +12,13 @@ export default function App() {
     "😜": "Winking Face with Tongue"
   };
   var emojiArray = Object.keys(emojiWeKnow);
-  console.log(emojiArray);
   var [meaning, setmeaning] = useState("");
 
   function inputEventHandler(e) {
     var currentMeaning = emojiWeKnow[e.target.value];
+    if (currentMeaning === undefined) {
+      currentMeaning = "we do not have thi in our database";
+    }
     setmeaning(currentMeaning);
   }
   return (
