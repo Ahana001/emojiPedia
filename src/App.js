@@ -2,8 +2,10 @@ import "./styles.css";
 import { useState } from "react";
 
 export default function App() {
+  var [emoji, setEmoji] = useState("");
+
   function inputEventHandler(e) {
-    console.log(e.target.value);
+    setEmoji(e.target.value);
   }
   return (
     <div className="App">
@@ -17,6 +19,7 @@ export default function App() {
           width: "80%"
         }}
       />
+      <h1>{emoji}</h1>
     </div>
   );
 }
