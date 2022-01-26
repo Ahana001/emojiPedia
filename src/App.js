@@ -1,8 +1,10 @@
 import "./styles.css";
 
 export default function App() {
+  var likeCounter = 0;
   function likeEventHandler() {
-    console.log("liked");
+    likeCounter = likeCounter + 1;
+    console.log("liked", likeCounter);
   }
   return (
     <div className="App">
