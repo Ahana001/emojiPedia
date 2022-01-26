@@ -2,10 +2,22 @@ import "./styles.css";
 import { useState } from "react";
 
 export default function App() {
-  var [emoji, setEmoji] = useState("");
+  var emojiWeKnow = {
+    "🥺": "Pleading Face",
+    "🥰": "Smiling Face with Hearts",
+    "☺️": "Smiling Face",
+    "😊": "Smiling Face with Smiling Eyes",
+    "😀": "Grinning Face",
+    "😆": "Grinning Squinting Face",
+    "😜": "Winking Face with Tongue"
+  };
+  var emojiArray = Object.keys(emojiWeKnow);
+
+  var [meaning, setmeaning] = useState("");
 
   function inputEventHandler(e) {
-    setEmoji(e.target.value);
+    var currentMeaning = emojiWeKnow[e.target.value];
+    setmeaning(currentMeaning);
   }
   return (
     <div className="App">
@@ -19,7 +31,7 @@ export default function App() {
           width: "80%"
         }}
       />
-      <h1>{emoji}</h1>
+      <p>{meaning}</p>
     </div>
   );
 }
