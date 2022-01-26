@@ -29,6 +29,7 @@ export default function App() {
     <div className="App">
       <h1 id="heading">inside outttt</h1>
       <input
+        placeholder="put an emoji here to know the meaning of it"
         onChange={(event) => inputEventHandler(event)}
         style={{
           fontSize: "1.5rem",
