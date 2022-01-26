@@ -2,3 +2,22 @@
   font-family: sans-serif;
   text-align: center;
 }
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+body {
+  background-color: #002b2a;
+}
+#heading {
+  color: #f8ec70;
+}
+input {
+  border: 2px solid #002b2a;
+  border-radius: 5px;
+}
+#meaning {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8ec70;
+}
+/* #101D40 */

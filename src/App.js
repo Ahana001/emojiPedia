@@ -21,9 +21,13 @@ export default function App() {
     }
     setmeaning(currentMeaning);
   }
+
+  function emojoClickEventHandler(emoji) {
+    setmeaning(emojiWeKnow[emoji]);
+  }
   return (
     <div className="App">
-      <h1>inside outttt</h1>
+      <h1 id="heading">inside outttt</h1>
       <input
         onChange={(event) => inputEventHandler(event)}
         style={{
@@ -33,10 +37,20 @@ export default function App() {
           width: "80%"
         }}
       />
-      <p>{meaning}</p>
+      <p id="meaning">{meaning}</p>
       {emojiArray.map((item) => {
         return (
-          <span style={{ marginLeft: "0.7rem", fontSize: "2rem" }}>{item}</span>
+          <span
+            key={item}
+            onClick={() => emojoClickEventHandler(item)}
+            style={{
+              marginLeft: "0.7rem",
+              fontSize: "2rem",
+              cursor: "pointer"
+            }}
+          >
+            {item}
+          </span>
         );
       })}
     </div>
