@@ -34,6 +34,11 @@ export default function App() {
         }}
       />
       <p>{meaning}</p>
+      {emojiArray.map((item) => {
+        return (
+          <span style={{ marginLeft: "0.7rem", fontSize: "2rem" }}>{item}</span>
+        );
+      })}
     </div>
   );
 }
