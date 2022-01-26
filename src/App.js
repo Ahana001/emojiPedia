@@ -12,7 +12,7 @@ export default function App() {
     "😜": "Winking Face with Tongue"
   };
   var emojiArray = Object.keys(emojiWeKnow);
-
+  console.log(emojiArray);
   var [meaning, setmeaning] = useState("");
 
   function inputEventHandler(e) {
