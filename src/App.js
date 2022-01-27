@@ -5,7 +5,6 @@ export default function App() {
   var emojiWeKnow = {
     "🥺": "Pleading Face",
     "🥰": "Smiling Face with Hearts",
-    "☺️": "Smiling Face",
     "😊": "Smiling Face with Smiling Eyes",
     "😀": "Grinning Face",
     "😆": "Grinning Squinting Face",
