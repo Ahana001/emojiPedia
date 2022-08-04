@@ -8,13 +8,21 @@ export default function App() {
     "😊": "Smiling Face with Smiling Eyes",
     "😀": "Grinning Face",
     "😆": "Grinning Squinting Face",
-    "😜": "Winking Face with Tongue"
+    "😜": "Winking Face with Tongue",
+    "🤗": " Smiling Face with Open Hands",
+    "🤔": " Thinking Face",
+    "🤫": "Shushing Face",
+    "😯": "Hushed Face",
+    "🤪": "Zany Face",
+    "😅": "Grinning Face with Sweat"
   };
   var emojiArray = Object.keys(emojiWeKnow);
   var [meaning, setmeaning] = useState("");
 
   function inputEventHandler(e) {
-    var currentMeaning = emojiWeKnow[e.target.value];
+    let emoji = e.target.value;
+    emoji = emoji.trim(" "); //remove extra space added in emoji
+    var currentMeaning = emojiWeKnow[emoji];
     if (currentMeaning === undefined) {
       currentMeaning = "we do not have thi in our database";
     }
@@ -38,21 +46,28 @@ export default function App() {
         }}
       />
       <p id="meaning">{meaning}</p>
-      {emojiArray.map((item) => {
-        return (
-          <span
-            key={item}
-            onClick={() => emojoClickEventHandler(item)}
-            style={{
-              marginLeft: "0.7rem",
-              fontSize: "2rem",
-              cursor: "pointer"
-            }}
-          >
-            {item}
-          </span>
-        );
-      })}
+      <div
+        style={{
+          maxWidth: "50%",
+          margin: "auto"
+        }}
+      >
+        {emojiArray.map((item) => {
+          return (
+            <span
+              key={item}
+              onClick={() => emojoClickEventHandler(item)}
+              style={{
+                marginLeft: "0.7rem",
+                fontSize: "2rem",
+                cursor: "pointer"
+              }}
+            >
+              {item}
+            </span>
+          );
+        })}
+      </div>
     </div>
   );
 }
